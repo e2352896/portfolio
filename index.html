@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio – Souleymane</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    p.subtitle {
+      color: #aaa;
+      font-size: 1.2rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #1f1f1f;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      color: #ccc;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .card a {
+      margin-right: 10px;
+      background: #e10600;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .card a:hover {
+      background: #ff3b30;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Soulaymane Benaddi  – Portfolio</h1>
+    <p class="subtitle">Développeur web passionné. Voici quelques projets que j’ai réalisés.</p>
+  </header>
+
+  <section class="projects">
+    <div class="card">
+      <h2>Plateforme de gestion de cabinet juridique</h2>
+      <p>Application web centralisant les infos clients et dossiers. (HTML, CSS, JS)</p>
+      <a href="https://github.com/e2352896/Cabinet.git" target="_blank">Code</a>
+    </div>
+
+    <div class="card">
+      <h2>Site vitrine – Monarque AutoCare</h2>
+      <p>Site professionnel développé pour mon entreprise de lavage automobile à domicile à Montréal. HTML, CSS, JS</p>
+      <a href="https://themonarque.ca" target="_blank">Site</a>
+    </div>
+
+    <div class="card">
+      <h2>Clone Netflix</h2>
+      <p>Application web réalisée en React reproduisant une plateforme de streaming (type Netflix) :</p>
+      <ul>
+        <li>Navigation par saisons et épisodes</li>
+        <li>Affichage des détails et lectures audio/vidéo</li>
+        <li>Historique des épisodes visionnés</li>
+        <li>Filtres dynamiques (titre + studio)</li>
+        <li>Pagination personnalisée</li>
+        <li>Authentification avec token et validation sécurisée</li>
+        <li>Responsive design (mobile, tablette, desktop)</li>
+      </ul>
+      <a href="https://github.com/e2352896/cloneNetflix.git" target="_blank">Code</a>
+    </div>
+
+    <div class="card">
+      <h2>Système de gestion – Magasin virtuel</h2>
+      <p>Application web full-stack permettant la gestion d’un magasin (produits, commandes, utilisateurs). Projet axé sur la logique métier et la manipulation de données – sans système d’authentification pour simplifier la navigation côté démonstration.</p>
+      <ul>
+        <li>Backend Node.js avec Express et base de données SQLite</li>
+        <li>Frontend responsive avec HTML, CSS, Bulma</li>
+      </ul>
+      <a href="https://github.com/e2352896/magasinVirtuel.git" target="_blank">Code</a>
+    </div>
+
+    <div class="card">
+      <h2>API REST – Gestion de tâches</h2>
+      <p>API complète développée avec Node.js et Express, couvrant toutes les fonctionnalités essentielles d’un backend moderne :</p>
+      <ul>
+        <li>Authentification des utilisateurs (login, JWT)</li>
+        <li>Validation robuste des requêtes avec express-validator</li>
+        <li>Téléversement et téléchargement de fichiers</li>
+        <li>Opérations CRUD sur les tâches</li>
+        <li>Tests d’API automatisés</li>
+      </ul>
+      <a href="https://github.com/e2352896/ApiRest.git" target="_blank">Code</a>
+    </div>
+
+    <div class="card">
+      <h2>Plateforme de gestion de cours</h2>
+      <p>Application web avec rôles différenciés :</p>
+      <ul>
+        <li>Admins : ajout, modification et suppression de cours</li>
+        <li>Étudiants : accès en lecture seule aux cours disponibles</li>
+        <li>Gestion des permissions selon le rôle utilisateur</li>
+        <li>Interface simple et responsive</li>
+      </ul>
+      <a href="https://github.com/tonpseudo/gestion-cours" target="_blank">Code</a>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2025 – Soulaymane | Tous droits réservés
+  </footer>
+</body>
+</html>
