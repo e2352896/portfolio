@@ -2,126 +2,350 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio – Soulaymane</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Souleymane Benaddi</title>
+
   <style>
+    :root {
+      --bg: #0f1117;
+      --card: #181b23;
+      --card-hover: #202431;
+      --text: #f5f5f5;
+      --muted: #a9afc3;
+      --accent: #4f8cff;
+      --accent-hover: #6ca0ff;
+      --border: #2a2f3d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #121212;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      background: radial-gradient(circle at top, #1a2233 0%, var(--bg) 45%);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
     }
 
     header {
-      padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
       text-align: center;
     }
 
-    h1 {
-      font-size: 2.5rem;
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin: 0 0 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.2rem;
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .header-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .header-links a {
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 0.65rem 1rem;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .header-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .section-title {
+      margin-bottom: 1rem;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
       margin-bottom: 0.3rem;
     }
 
-    p.subtitle {
-      color: #aaa;
-      font-size: 1.2rem;
+    .section-title p {
+      color: var(--muted);
+      margin-top: 0;
     }
 
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
+      gap: 1.5rem;
     }
 
     .card {
-      background-color: #1f1f1f;
-      border-radius: 12px;
+      background: rgba(24, 27, 35, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 18px;
       padding: 1.5rem;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      transition: transform 0.2s;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+      transition: 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 320px;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      background: var(--card-hover);
+      transform: translateY(-6px);
+      border-color: rgba(79, 140, 255, 0.5);
     }
 
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.5rem;
+    .card h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1.35rem;
     }
 
     .card p {
-      color: #ccc;
-      margin: 0.5rem 0 1rem;
+      color: var(--muted);
+      margin: 0 0 1rem;
     }
 
-    .card a {
-      margin-right: 10px;
-      background: #e10600;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.75rem 0 1.2rem;
+    }
+
+    .tag {
+      font-size: 0.82rem;
+      color: #d7e4ff;
+      background: rgba(79, 140, 255, 0.13);
+      border: 1px solid rgba(79, 140, 255, 0.25);
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+    }
+
+    .card-actions {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .btn {
+      display: inline-block;
       text-decoration: none;
-      transition: background 0.3s;
+      color: white;
+      background: var(--accent);
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.2s ease;
     }
 
-    .card a:hover {
-      background: #ff3b30;
+    .btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn.secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent-hover);
+      background: transparent;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
-      color: #888;
-      font-size: 0.9rem;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 3rem 1.2rem 1rem;
+      }
+
+      main {
+        padding: 1.2rem;
+      }
+
+      .card {
+        min-height: auto;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Soulaymane Benaddi  – Portfolio</h1>
-    <p class="subtitle">Développeur web passionné. Voici quelques projets que j’ai réalisés.</p>
+    <h1>Soulaymane Benaddi</h1>
+    <p class="subtitle">
+      Développeur full-stack junior passionné par la création d’applications web utiles, modernes et bien structurées.
+    </p>
+
+    <div class="header-links">
+      <a href="https://github.com/e2352896" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/soulaymane-benaddi" target="_blank">LinkedIn</a>
+      <a href="mailto:soulaymanebenaddi@gmail.com">Me contacter</a>
+    </div>
   </header>
 
-  <section class="projects">
-    <div class="card">
-      <h2>Plateforme de gestion de cabinet juridique</h2>
-      <p>Application web centralisant les infos clients et dossiers. (HTML, CSS, JS)</p>
-      <a href="https://github.com/e2352896/Cabinet.git" target="_blank">Code</a>
-    </div>
+  <main>
+    <section class="section-title">
+      <h2>Projets</h2>
+      <p>Quelques projets réalisés dans le cadre de mes études, de mon apprentissage et de mes initiatives personnelles.</p>
+    </section>
 
-    <div class="card">
-      <h2>Plateforme de réservation et paiement – Monarque AutoCare</h2>
-      <p>Application web développée pour mon entreprise de lavage automobile. Permet aux clients de créer un compte, réserver un service et effectuer un paiement sécurisé via Stripe.</p>
-      <a href="https://themonarque.ca" target="_blank">Site</a>
-    </div>
+    <section class="projects">
 
-    <div class="card">
-      <h2>Clone Netflix</h2>
-      <p>Application web réalisée en React reproduisant une plateforme de streaming (type Netflix)</p>
-      <a href="https://github.com/e2352896/cloneNetflix.git" target="_blank">Code</a>
-    </div>
+      <article class="card">
+        <h3>System Monitoring Dashboard – Centris</h3>
 
-    <div class="card">
-      <h2>API REST – Gestion de tâches</h2>
-      <p>API complète développée avec Node.js et Express, couvrant toutes les fonctionnalités essentielles d’un backend moderne</p>
-      <a href="https://github.com/e2352896/ApiRest.git" target="_blank">Code</a>
-    </div>
+        <p>
+          Tableau de bord interne développé dans le cadre de mon stage chez Centris afin de visualiser
+          l’état de santé de plusieurs systèmes, composants et environnements. Le projet permet de centraliser
+          les informations de monitoring et d’améliorer la lisibilité des données techniques pour les équipes.
+        </p>
 
-    <div class="card">
-      <h2>Système de gestion – Magasin virtuel</h2>
-      <p>Application web full-stack permettant la gestion d’un magasin (produits, commandes, utilisateurs). Projet axé sur la logique métier et la manipulation de données – sans système d’authentification pour simplifier la navigation côté démonstration.</p>
-      <a href="https://github.com/e2352896/magasinVirtuel.git" target="_blank">Code</a>
-    </div>
+        <div class="tags">
+          <span class="tag">C#</span>
+          <span class="tag">ASP.NET Core</span>
+          <span class="tag">Blazor</span>
+          <span class="tag">Azure DevOps</span>
+          <span class="tag">Monitoring</span>
+        </div>
 
-  </section>
+      </article>
+
+      <article class="card">
+        <h3>Monarque AutoCare</h3>
+
+        <p>
+          Site web de réservation conçu pour une entreprise de lavage automobile premium à domicile.
+          Le projet présente les services, facilite la prise de rendez-vous et offre une expérience
+          claire et professionnelle adaptée à une clientèle haut de gamme.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">Express.js</span>
+          <span class="tag">Knex.js</span>
+          <span class="tag">Stripe</span>
+          <span class="tag">Réservation</span>
+          <span class="tag">Entreprise réelle</span>
+        </div>
+
+        <div class="card-actions">
+          <a class="btn" href="https://themonarque.ca" target="_blank">Voir le site</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Orivox – Agent vocal IA</h3>
+
+        <p>
+          Projet d’agent vocal intelligent conçu pour automatiser la prise de rendez-vous par téléphone.
+          L’agent peut comprendre les demandes des clients, vérifier les disponibilités, proposer des créneaux
+          et préparer la réservation grâce à des automatisations connectées à un calendrier.
+        </p>
+
+        <div class="tags">
+          <span class="tag">IA vocale</span>
+          <span class="tag">ElevenLabs</span>
+          <span class="tag">n8n</span>
+          <span class="tag">Twilio</span>
+          <span class="tag">Google Calendar</span>
+          <span class="tag">Webhooks</span>
+          <span class="tag">Automatisation</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Availo – Disponibilité des livres</h3>
+
+        <p>
+          Application web conçue pour la Coop Maisonneuve afin de permettre aux étudiants
+          de vérifier la disponibilité des livres avant de se déplacer. Le projet vise à réduire les files
+          d’attente pendant la rentrée en offrant une consultation rapide et simple des livres disponibles.
+        </p>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Notifications push PWA</span>
+          <span class="tag">Coop Maisonneuve</span>
+        </div>
+
+      </article>
+
+      <article class="card">
+        <h3>Sweatly – Application mobile d’exercices</h3>
+
+        <p>
+          Application mobile développée avec Flutter permettant de consulter des exercices provenant d’une API de fitness.
+          L’utilisateur peut parcourir les exercices, les ajouter à une playlist d’entraînement, puis lancer sa séance
+          avec les exercices sélectionnés.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Dart</span>
+          <span class="tag">API externe</span>
+          <span class="tag">Mobile</span>
+          <span class="tag">Fitness</span>
+        </div>
+
+      </article>
+
+      <article class="card">
+        <h3>API REST – Gestion de tâches</h3>
+        <p>
+          API backend développée avec Node.js et Express permettant la gestion de tâches, d’utilisateurs et d’opérations CRUD.
+          Le projet met l’accent sur la structure d’une API moderne, les routes, les contrôleurs et la validation des données.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">Express.js</span>
+          <span class="tag">API REST</span>
+          <span class="tag">Backend</span>
+        </div>
+
+        <div class="card-actions">
+          <a class="btn" href="https://github.com/e2352896/ApiRest.git" target="_blank">Voir le code</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
 
   <footer>
-    © 2025 – Soulaymane | Tous droits réservés
+    © 2026 – Soulaymane Benaddi | Portfolio développeur full-stack junior
   </footer>
 </body>
 </html>
