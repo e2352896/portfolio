@@ -342,7 +342,7 @@
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 18px;
     }
 
@@ -352,10 +352,6 @@
       overflow: hidden;
       min-height: 100%;
       box-shadow: 0 10px 28px rgba(23, 32, 51, 0.07);
-    }
-
-    .project-card.featured {
-      grid-column: span 2;
     }
 
     .project-body {
@@ -435,6 +431,24 @@
       background: white;
     }
 
+    .media-link {
+      display: block;
+      border-radius: var(--radius);
+      cursor: zoom-in;
+      outline-offset: 4px;
+    }
+
+    .media-link:hover img,
+    .media-link:focus-visible img {
+      border-color: var(--accent);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.16);
+      transform: translateY(-2px);
+    }
+
+    .media-link img {
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
     .media-strip.mobile img {
       max-width: 150px;
       height: 300px;
@@ -468,10 +482,6 @@
       .projects,
       .skills {
         grid-template-columns: 1fr;
-      }
-
-      .project-card.featured {
-        grid-column: auto;
       }
 
       .quick-facts {
@@ -635,7 +645,6 @@
             <p class="eyebrow">Expérience</p>
             <h2>Stage professionnel chez Centris</h2>
           </div>
-          <p>Une expérience concrète en contexte d'équipe, avec des besoins internes, de l'authentification et du monitoring.</p>
         </div>
 
         <article class="experience">
@@ -676,7 +685,6 @@
             <p class="eyebrow">Compétences</p>
             <h2>Compétences techniques</h2>
           </div>
-          <p>Un profil full-stack junior avec des bases solides en développement web, backend, bases de données, outils d'équipe et déploiement.</p>
         </div>
 
         <div class="skills">
@@ -778,7 +786,6 @@
             <p class="eyebrow">Projets</p>
             <h2>Réalisations sélectionnées</h2>
           </div>
-          <p>Des projets qui montrent autant la technique que la capacité à livrer pour un besoin réel.</p>
         </div>
 
         <div class="projects">
@@ -826,16 +833,22 @@
             </div>
           </article>
 
-          <article class="project-card featured">
+          <article class="project-card">
             <div class="media-strip desktop">
-              <img src="assets/availo-home.png" alt="Écran d'accueil du projet Availo" />
-              <img src="assets/availo-results.png" alt="Liste de résultats du projet Availo" />
-              <img src="assets/availo-detail.png" alt="Fiche détaillée d'un livre dans Availo" />
+              <a class="media-link" href="assets/availo-home.png" target="_blank" rel="noreferrer" aria-label="Agrandir l'écran d'accueil du projet Availo">
+                <img src="assets/availo-home.png" alt="Écran d'accueil du projet Availo" />
+              </a>
+              <a class="media-link" href="assets/availo-results.png" target="_blank" rel="noreferrer" aria-label="Agrandir la liste de résultats du projet Availo">
+                <img src="assets/availo-results.png" alt="Liste de résultats du projet Availo" />
+              </a>
+              <a class="media-link" href="assets/availo-detail.png" target="_blank" rel="noreferrer" aria-label="Agrandir la fiche détaillée du projet Availo">
+                <img src="assets/availo-detail.png" alt="Fiche détaillée d'un livre dans Availo" />
+              </a>
             </div>
             <div class="project-body">
               <div class="project-top">
                 <h3>Availo · Disponibilité des livres</h3>
-                <span class="label private">Code privé</span>
+                <span class="label private">Projet client</span>
               </div>
               <p>
                 Application web conçue pour la Coop Maisonneuve afin d'aider les étudiants à vérifier
@@ -849,15 +862,24 @@
                 <span class="tag">Notifications push</span>
                 <span class="tag">Coop Maisonneuve</span>
               </div>
-              <p class="note">Le code source et les données d'inventaire ne sont pas publiés à la demande du client.</p>
+              <p class="note">Les données d'inventaire ne sont pas publiées à la demande du client.</p>
+              <div class="project-actions">
+                <a class="btn" href="https://github.com/soulaymanebenaddi/Availo" target="_blank" rel="noreferrer">Voir le code</a>
+              </div>
             </div>
           </article>
 
-          <article class="project-card featured">
+          <article class="project-card">
             <div class="media-strip mobile">
-              <img src="assets/sweatly-signup.png" alt="Inscription de l'application mobile Sweatly" />
-              <img src="assets/sweatly-dashboard.png" alt="Tableau de bord de l'application mobile Sweatly" />
-              <img src="assets/sweatly-feed.png" alt="Liste d'exercices de l'application mobile Sweatly" />
+              <a class="media-link" href="assets/sweatly-signup.png" target="_blank" rel="noreferrer" aria-label="Agrandir l'inscription de l'application mobile Sweatly">
+                <img src="assets/sweatly-signup.png" alt="Inscription de l'application mobile Sweatly" />
+              </a>
+              <a class="media-link" href="assets/sweatly-dashboard.png" target="_blank" rel="noreferrer" aria-label="Agrandir le tableau de bord de l'application mobile Sweatly">
+                <img src="assets/sweatly-dashboard.png" alt="Tableau de bord de l'application mobile Sweatly" />
+              </a>
+              <a class="media-link" href="assets/sweatly-feed.png" target="_blank" rel="noreferrer" aria-label="Agrandir la liste d'exercices de l'application mobile Sweatly">
+                <img src="assets/sweatly-feed.png" alt="Liste d'exercices de l'application mobile Sweatly" />
+              </a>
             </div>
             <div class="project-body">
               <div class="project-top">
